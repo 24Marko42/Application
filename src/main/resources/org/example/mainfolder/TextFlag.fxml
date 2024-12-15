@@ -1,19 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<AnchorPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
-            fx:controller="org.example.mainfolder.TextFlagController">
-    <VBox spacing="10" alignment="CENTER" layoutX="50" layoutY="50">
-        <TextField fx:id="inputField" promptText="Введите текст" />
 
-        <Label text="Выберите цвет фона:" />
-        <ComboBox fx:id="backgroundColorPicker" onAction="#changeBackground" />
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
 
-        <Label text="Выберите цвет текста:" />
-        <HBox spacing="10">
-            <RadioButton fx:id="textColorRed" text="Красный" onAction="#changeTextColor" />
-            <RadioButton fx:id="textColorBlue" text="Синий" onAction="#changeTextColor" />
-            <RadioButton fx:id="textColorGreen" text="Зеленый" onAction="#changeTextColor" />
-        </HBox>
+<AnchorPane prefHeight="300.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.mainfolder.TextFlagController">
+    <VBox layoutX="22.0" layoutY="14.0" spacing="10">
+        <RadioButton fx:id="firstColorRed" text="Красный">
+         <toggleGroup>
+            <ToggleGroup fx:id="colorGroup1" />
+         </toggleGroup></RadioButton>
+        <RadioButton fx:id="firstColorGreen" text="Зеленый" toggleGroup="$colorGroup1" />
+        <RadioButton fx:id="firstColorBlue" text="Синий" toggleGroup="$colorGroup1" />
     </VBox>
+
+    <VBox layoutX="152.0" layoutY="14.0" spacing="10">
+        <RadioButton fx:id="secondColorYellow" text="Желтый">
+         <toggleGroup>
+            <ToggleGroup fx:id="colorGroup2" />
+         </toggleGroup></RadioButton>
+        <RadioButton fx:id="secondColorWhite" text="Белый" toggleGroup="$colorGroup2" />
+        <RadioButton fx:id="secondColorOrange" text="Оранжевый" toggleGroup="$colorGroup2" />
+    </VBox>
+
+    <VBox layoutX="281.0" layoutY="14.0" spacing="10">
+        <RadioButton fx:id="thirdColorBlack" text="Черный">
+         <toggleGroup>
+            <ToggleGroup fx:id="colorGroup3" />
+         </toggleGroup></RadioButton>
+        <RadioButton fx:id="thirdColorPurple" text="Фиолетовый" toggleGroup="$colorGroup3" />
+        <RadioButton fx:id="thirdColorGray" text="Серый" toggleGroup="$colorGroup3" />
+    </VBox>
+
+
+    <!-- Кнопка для вывода результата -->
+    <Button fx:id="drawButton" layoutX="156.0" layoutY="175.0" onAction="#drawFlag" text="Нарисовать" />
+
+    <!-- Метка для отображения выбранных цветов -->
+    <Label fx:id="resultLabel" layoutX="22.0" layoutY="211.0" text="Выбранные цвета: " />
 </AnchorPane>

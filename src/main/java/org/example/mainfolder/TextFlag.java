@@ -6,18 +6,23 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 public class TextFlag extends Application {
+
     @Override
     public void start(Stage primaryStage) throws Exception {
+        // Загрузка FXML файла
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/example/mainfolder/TextFlag.fxml"));
+
+        // Создание сцены из загруженного интерфейса
         Scene scene = new Scene(loader.load());
-        primaryStage.setScene(scene);
-        primaryStage.setTitle("Текстовый флаг");
-        primaryStage.setMinWidth(300); // Устанавливает минимальную ширину окна
-        primaryStage.setMinHeight(300); // Устанавливает минимальную высоту окна
-        primaryStage.show();
+
+        // Настройка окна приложения
+        primaryStage.setScene(scene); // Устанавливаем сцену
+        primaryStage.setTitle("Текстовый флаг"); // Заголовок окна
+        primaryStage.setResizable(false); // Запрещаем изменение размера окна
+        primaryStage.show(); // Показываем окно
     }
 
     public static void main(String[] args) {
-        launch(args);
+        launch(args); // Запуск приложения
     }
 }
