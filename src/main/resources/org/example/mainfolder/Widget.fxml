@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<AnchorPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+            fx:controller="org.example.mainfolder.WidgetController">
+    <VBox spacing="10" alignment="CENTER" layoutX="50" layoutY="50">
+        <Label fx:id="label1" text="Виджет 1" />
+        <Button fx:id="button1" text="Виджет 2" />
+        <TextField fx:id="textField1" promptText="Виджет 3" />
+
+        <CheckBox fx:id="checkLabel" text="Показать/скрыть Виджет 1" onAction="#toggleLabel" />
+        <CheckBox fx:id="checkButton" text="Показать/скрыть Виджет 2" onAction="#toggleButton" />
+        <CheckBox fx:id="checkTextField" text="Показать/скрыть Виджет 3" onAction="#toggleTextField" />
+    </VBox>
+</AnchorPane>

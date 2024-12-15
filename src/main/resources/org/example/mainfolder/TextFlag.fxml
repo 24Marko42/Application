@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<AnchorPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+            fx:controller="org.example.mainfolder.TextFlagController">
+    <VBox spacing="10" alignment="CENTER" layoutX="50" layoutY="50">
+        <TextField fx:id="inputField" promptText="Введите текст" />
+
+        <Label text="Выберите цвет фона:" />
+        <ComboBox fx:id="backgroundColorPicker" onAction="#changeBackground" />
+
+        <Label text="Выберите цвет текста:" />
+        <HBox spacing="10">
+            <RadioButton fx:id="textColorRed" text="Красный" onAction="#changeTextColor" />
+            <RadioButton fx:id="textColorBlue" text="Синий" onAction="#changeTextColor" />
+            <RadioButton fx:id="textColorGreen" text="Зеленый" onAction="#changeTextColor" />
+        </HBox>
+    </VBox>
+</AnchorPane>
